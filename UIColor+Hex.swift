@@ -14,14 +14,15 @@ extension UIColor{
         return color
     }
     
-    func intFromHexString(hexStr: String) -> UInt32 {
-        var hexInt: UInt32 = 0
+    func intFromHexString(hexStr: String) -> UInt64 {
+        var hexInt: UInt64 = 0
         // Create scanner
         let scanner: Scanner = Scanner(string: hexStr)
         // Tell scanner to skip the # character
         scanner.charactersToBeSkipped = NSCharacterSet(charactersIn: "#") as CharacterSet
         // Scan hex value
-        scanner.scanHexInt32(&hexInt)
+        scanner.scanHexInt64(&hexInt)
+        //scanner.scanHexInt32(&hexInt)
         return hexInt
     }
     
